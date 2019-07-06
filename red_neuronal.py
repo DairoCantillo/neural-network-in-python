@@ -6,6 +6,8 @@ Deca
 import numpy as np
 import scipy as sc
 import matplotlib.pyplot as plt
+import time
+from IPython.display import clear_output
 
 from sklearn.datasets import make_circles
 
@@ -110,10 +112,7 @@ train(neural_net, X, Y, l2_coste, 0.5)
 
 # VISUALIZACIÓN Y TEST
 
-import time
-from IPython.display import clear_output
-
-neural_n = create_red_nueronal(topology, sigm)
+neural_n = create_red_neuronal(topology, sigm)
 
 loss = []
 
