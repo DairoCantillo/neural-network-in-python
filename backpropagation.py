@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 """Red Neuronal.ipynb
 Deca
 """
@@ -7,7 +6,8 @@ import matplotlib.pyplot as plt
 import time
 from train import *
 from datasets.dataset import *
-from activation_funtions import *
+from parameters.activation_funtions import *
+from parameters.topology import *
 # CLASE DE LA  CAPA DE LA RED
 
 class neural_layer():
@@ -23,12 +23,10 @@ class neural_layer():
 _x = np.linspace(-5, 5, 100)
 #plt.plot(_x, sigm[0](_x))
 #plt.plot(_x, relu(_x))
-
 #layer0 = neural_layer(p, 4, sigm)
 
 
 def create_red_neuronal(topology, activation_funtion):
-
     neuronal = []
 
     for l, layer in enumerate(topology[:-1]):
@@ -37,8 +35,6 @@ def create_red_neuronal(topology, activation_funtion):
             topology[l], topology[l+1], activation_funtion))
     return neuronal
 
-
-topology = [p, 4, 8, 1]
 
 neural_net = create_red_neuronal(topology, sigm)
 

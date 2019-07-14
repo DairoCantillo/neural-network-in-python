@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
-from red_neuronal import *
+from backpropagation import *
 from IPython.display import clear_output
+from parameters.activation_funtions import *
 
 
 if __name__ == "__main__":
@@ -9,10 +10,10 @@ if __name__ == "__main__":
 
     loss = []
 
-    for i in range(1000):
+    for i in range(1100):
 
         # Entrenemos a la red!
-        pY = train(neural_n, X, Y, l2_coste, lr=0.05)
+        pY = train(neural_n, X, Y, l2_coste, lr=0.06)
 
         if i % 25 == 0:
 
