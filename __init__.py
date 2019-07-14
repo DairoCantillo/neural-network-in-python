@@ -2,7 +2,7 @@
 from backpropagation import *
 from IPython.display import clear_output
 from parameters.activation_funtions import *
-
+from parameters.topology import *
 
 if __name__ == "__main__":
     # VISUALIZACIÓN Y TEST
@@ -10,10 +10,10 @@ if __name__ == "__main__":
 
     loss = []
 
-    for i in range(1100):
+    for i in range(max_iter):
 
         # Entrenemos a la red!
-        pY = train(neural_n, X, Y, l2_coste, lr=0.06)
+        pY = train(neural_n, X, Y, l2_coste, lr=learning_rate)
 
         if i % 25 == 0:
 
@@ -33,14 +33,14 @@ if __name__ == "__main__":
                     _Y[i0, i1] = train(neural_n, np.array(
                         [[x0, x1]]), Y, l2_coste, train=False)[0][0]
 
-            plt.pcolormesh(_x0, _x1, _Y, cmap="coolwarm")
-            plt.axis("equal")
+    plt.pcolormesh(_x0, _x1, _Y, cmap="coolwarm")
+    plt.axis("equal")
 
-            plt.scatter(X[Y[:, 0] == 0, 0], X[Y[:, 0] == 0, 1], c="skyblue")
-            plt.scatter(X[Y[:, 0] == 1, 0], X[Y[:, 0] == 1, 1], c="salmon")
+    plt.scatter(X[Y[:, 0] == 0, 0], X[Y[:, 0] == 0, 1], c="skyblue")
+    plt.scatter(X[Y[:, 0] == 1, 0], X[Y[:, 0] == 1, 1], c="salmon")
 
-            clear_output(wait=True)
-            plt.show()
-            plt.plot(range(len(loss)), loss)
-            plt.show()
-            time.sleep(0.5)
+    clear_output(wait=True)
+    plt.show()
+    plt.plot(range(len(loss)), loss)
+    plt.show()
+

@@ -3,7 +3,6 @@ Deca
 """
 import numpy as np
 import matplotlib.pyplot as plt
-import time
 from train import *
 from datasets.dataset import *
 from parameters.activation_funtions import *
@@ -42,6 +41,6 @@ l2_coste = (lambda Yp, Yr: np.mean((Yp - Yr) ** 2),
             lambda Yp, Yr: (Yp - Yr))
 
 
-train(neural_net, X, Y, l2_coste, 0.5)
+#train(neural_net, X, Y, l2_coste, 0.5)
 
 
